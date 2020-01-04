@@ -1,0 +1,26 @@
+from queue import *
+from stack import *
+from tree import *
+from binary_tree import *
+x=binary_tree(2)
+x.AddLeft(3)
+y=binary_tree(4)
+y.AddLeft(binary_tree(1))
+y.AddRight(binary_tree(7))
+x.AddRight(y)
+x.Get_LevelOrder()
+x.ConvertToTree()
+x.Get_LevelOrder()
+x=tree(1000)
+y=tree(2000)
+z=tree(3000)
+x.AddSuccessor(y)
+x.AddSuccessor(z)
+c=tree(5)
+z.AddSuccessor(c)
+f=tree(7)
+y.AddSuccessor(f)
+x.Print_DepthFirst()
+x.Get_LevelOrder()
+x.ConvertToBinaryTree()
+x.Get_LevelOrder()

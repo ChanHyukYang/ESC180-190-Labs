@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "ge.c"
+
+int main(void)
+{
+        const int rows = 3;
+        const int columns = 5;
+        float m[15] = { 1, 5, 4, 2, 3, 2, 4, 3, 1, 9, 3, 9, 1, 2, 5 };
+        float *m2 = NULL, *m3 = NULL;
+
+        printMatrix(m, rows, columns);
+
+        m2 = (float*)malloc(sizeof(float) * rows * columns);
+        m3 = (float*)malloc(sizeof(float) * rows * columns);
+
+        ge_fw((float*)m, rows, columns, m2);
+        ge_bw((float*)m2, rows, columns, m3);
+
+        printf("*****************\n");
+        printMatrix(m3, rows, columns);
+}
